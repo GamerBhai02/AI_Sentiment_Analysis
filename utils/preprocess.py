@@ -1,11 +1,10 @@
 import re
 import emoji
-from cleantext import clean
 import pandas as pd
 
 def clean_text(text):
     """
-    Clean and preprocess text data
+    Clean and preprocess text data without using cleantext package
     """
     if not isinstance(text, str):
         return ""
@@ -16,9 +15,9 @@ def clean_text(text):
     text = re.sub(r'@\w+', '', text)
     # Remove hashtags
     text = re.sub(r'#\w+', '', text)
-    # Remove special characters and numbers
+    # Remove special characters and numbers (keep letters and spaces)
     text = re.sub(r'[^a-zA-Z\s]', '', text)
-    # Convert emojis to text
+    # Convert emojis to text using emoji package directly
     text = emoji.demojize(text)
     # Convert to lowercase
     text = text.lower()
