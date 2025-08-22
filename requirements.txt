@@ -10,6 +10,6 @@ snscrape==0.6.2.20230320
 plotly==5.18.0
 textblob==0.17.1
 clean-text==0.6.0
-emoji==2.8.0
+emoji
 tqdm==4.66.1
 protobuf==3.20.3
